@@ -1,16 +1,67 @@
-# React + Vite
+# React + Vite + Authentication App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR, ESLint rules, and a complete authentication system using shadcnUI components.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Login System**: Email/password authentication with mock data
+- **Protected Routes**: Authentication-based route protection
+- **Home Page**: Simple home page accessible after login
+- **shadcnUI Components**: Modern UI components with Tailwind CSS
+- **TypeScript**: Full TypeScript support with proper typing
 
-## React Compiler
+## Demo Credentials
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Email: `admin`
+- Password: `123123`
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19** with TypeScript
+- **Vite** for build tooling and dev server
+- **React Router** for client-side routing
+- **shadcnUI** for UI components
+- **Tailwind CSS** for styling
+- **Radix UI** for accessible components
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm run dev
+```
+
+3. Open your browser and navigate to `http://localhost:5173/signin` (or just `http://localhost:5173` and it will redirect)
+
+## Authentication Flow
+
+1. **Login Page** (`/signin`): Users can enter credentials (admin/123123)
+2. **Home Page** (`/`): Protected page accessible only after successful login
+3. **Logout**: Users can logout from the home page, which redirects back to login
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/                 # shadcnUI components
+│   └── ProtectedRoute.tsx  # Route protection component
+├── pages/
+│   ├── Login.tsx          # Login page
+│   └── Home.tsx           # Home page
+├── lib/
+│   └── utils.ts           # Utility functions
+└── App.tsx                # Main app with routing
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
